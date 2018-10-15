@@ -13,6 +13,11 @@ import DiceDisplay from './components/diceDisplay'
 // init materialize
 M.AutoInit()
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems, {});
+});
+
 // create a Mersenne Twister-19937 that is auto-seeded based on time and other random values
 var engine = Random.engines.mt19937().autoSeed()
 var distribution = Random.integer(1, 6)
@@ -134,7 +139,7 @@ class App extends Component {
                 <div className='col s4'>
                   A dice roller for:{' '}
                   <a
-                    href='http://frialigan.se/en/startpage/'
+                    href='http://frialigan.se/en/games/forbidden-lands/'
                     rel='noopener noreferrer'
                     target='_blank'>
                     Forbidden Lands

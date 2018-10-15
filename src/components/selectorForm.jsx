@@ -62,6 +62,29 @@ class SelectorForm extends Component {
           value={this.state.gearCount}
           onChange={this.handleCountChange}
         />
+        <ul className='collapsible'>
+          <li>
+            <div className='collapsible-header'>Artifacts</div>
+            <div className='collapsible-body'>
+              <NumberSelector
+                name='mighty'
+                value={this.state.gearCount}
+                onChange={this.handleCountChange}
+              />
+              <NumberSelector
+                name='epic'
+                value={this.state.gearCount}
+                onChange={this.handleCountChange}
+              />
+              <NumberSelector
+                name='legendary'
+                value={this.state.gearCount}
+                onChange={this.handleCountChange}
+              />
+            </div>
+            </li>
+          </ul>
+          
         <span>
           <div
             style={style}

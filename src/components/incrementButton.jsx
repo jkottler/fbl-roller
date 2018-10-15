@@ -45,6 +45,18 @@ const types = {
   gear: {
     background: 'black',
     foreground: 'white'
+  },
+  mighty: {
+    background: 'NavajoWhite',
+    foreground: 'black'
+  },
+  epic: {
+    background: 'NavajoWhite',
+    foreground: 'black'
+  },
+  legendary: {
+    background: 'NavajoWhite',
+    foreground: 'black'
   }
 }
 

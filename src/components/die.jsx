@@ -4,6 +4,9 @@ import swordWhite from './crossed-swords-white.svg'
 import swordBlack from './crossed-swords-black.svg'
 import skullWhite from './dread-skull-white.svg'
 import skullBlack from './dread-skull-black.svg'
+import d8_1 from './d8-1.svg'
+import d8_2 from './d8-2.svg'
+
 
 function Die (props) {
   return (
@@ -42,23 +45,35 @@ const dieTypes = {
   base: {
     background: 'silver',
     foreground: 'black',
-    one: skullBlack,
-    six: swordBlack
+    special : {
+      1:skullBlack,
+      6:swordBlack
+    }
   },
   skill: {
     background: 'maroon',
     foreground: 'white',
-    six: swordWhite
+    special: {
+      6: swordWhite
+    }
   },
   gear: {
     background: 'black',
     foreground: 'white',
-    one: skullWhite,
-    six: swordWhite
+    special: {
+      1: skullWhite,
+      6: swordWhite
+    }
   },
   artifactMightyd8: {
     background: 'silver',
-    foreground: 'black'
+    foreground: 'black',
+    special: {  
+      6: d8_1,
+      7: d8_1,
+      8: d8_2
+    }
+
   },
   artifactEpicd10: {
     background: 'silver',
@@ -72,27 +87,15 @@ const dieTypes = {
 
 const show = (type, value) => {
   let v = parseInt(value, 10)
-  if (v === 6) {
+  if(dieTypes[type].special.hasOwnProperty(v)) {
     return (
       <img
         height='40'
         width='40'
         border-radius='5px'
-        src={dieTypes[type].six}
+        src={dieTypes[type].special[v]}
         style={style2}
-        alt={dieTypes[type].six}
-      />
-    )
-  }
-  if (v === 1 && type !== 'skill') {
-    return (
-      <img
-        height='40'
-        width='40'
-        border-radius='5px'
-        src={dieTypes[type].one}
-        style={style2}
-        alt={dieTypes[type].one}
+        alt={dieTypes[type].special[v]}
       />
     )
   }
