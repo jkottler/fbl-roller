@@ -19,7 +19,13 @@ const distributions = {
   d6:Random.integer(1, 6),
   d8:Random.integer(1,8),
   d10:Random.integer(1,10),
-  d12: Random.integer(1,12)
+  d12: Random.integer(1,12),
+  base:Random.integer(1, 6),
+  skill:Random.integer(1, 6),
+  gear:Random.integer(1, 6),
+  mighty:Random.integer(1, 8),
+  epic:Random.integer(1,10),
+  legendary:Random.integer(1,12),
 }
 
 function roll (distribution) {
@@ -32,32 +38,32 @@ function rollDice (baseCount, skillCount, gearCount, mightyCount, epicCount, leg
   let index = 0
 
   for (let i = 0; i < baseCount; i++) {
-    result.push(<Die value={roll('d6')} type='base' key={index} />)
+    result.push(<Die value={roll('base')} type='base' key={index} />)
     index++
   }
 
   for (let i = 0; i < skillCount; i++) {
-    result.push(<Die value={roll('d6')} type='skill' key={index} />)
+    result.push(<Die value={roll('skill')} type='skill' key={index} />)
     index++
   }
 
   for (let i = 0; i < gearCount; i++) {
-    result.push(<Die value={roll('d6')} type='gear' key={index} />)
+    result.push(<Die value={roll('gear')} type='gear' key={index} />)
     index++
   }
 
   for (let i = 0; i < mightyCount; i++) {
-    result.push(<Die value={roll('d8')} type='mighty' key={index} />)
+    result.push(<Die value={roll('mighty')} type='mighty' key={index} />)
     index++
   }
  
   for (let i = 0; i < epicCount; i++) {
-    result.push(<Die value={roll('d10')} type='epic' key={index} />)
+    result.push(<Die value={roll('epic')} type='epic' key={index} />)
     index++
   }
 
   for (let i = 0; i < legendaryCount; i++) {
-    result.push(<Die value={roll('d12')} type='legendary' key={index} />)
+    result.push(<Die value={roll('legendary')} type='legendary' key={index} />)
     index++
   }
   return result
@@ -105,21 +111,21 @@ class App extends Component {
       let newDice = []
       for (let die of this.state.dice) {
         if (
-          die.props.value === 6 ||
-          (die.props.value === 1 && die.props.type !== 'skill')
+          die.props.value >= 6 ||
+          (die.props.value === 1 && die.props.type in ['base', 'gear'])
         ) {
           // keep symbol dice
           newDice.push(die)
         } else {
           // reroll others
           newDice.push(
-            <Die value={roll()} type={die.props.type} key={die.key} />
+            <Die value={roll(die.props.type)} type={die.props.type} key={die.key} />
           )
         }
       }
       this.setState({
         dice: newDice,
-        pushDisabled: 'disabled',
+        pushDisabled: '',
         prideDisabled: ''
       })
     }

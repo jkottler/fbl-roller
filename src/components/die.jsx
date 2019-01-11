@@ -77,11 +77,13 @@ const dieTypes = {
   },
   epic: {
     background: 'blue',
-    foreground: 'yellow'
+    foreground: 'yellow',
+    special: {} // TODO: get 2 and 3 sword graphics made, map to special values here
   },
   legendary: {
     background: 'orange',
-    foreground: 'black'
+    foreground: 'black',
+    special:{}
   }
 }
 
