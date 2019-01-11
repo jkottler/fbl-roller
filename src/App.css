@@ -11,14 +11,16 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 200px;
+  background-color: maroon;
+  height: 90;
   padding: 20px;
   color: white;
 }
 
 .App-title {
   font-size: 1.5em;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 .App-intro {
@@ -50,7 +52,7 @@ a {
 
 @media only screen and (max-width: 600px) {
   .App-header {
-    height: 60px !important;
+    height: 30px !important;
     padding: 0px !important;
   }
 

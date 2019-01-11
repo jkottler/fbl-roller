@@ -47,15 +47,15 @@ const types = {
     foreground: 'white'
   },
   mighty: {
-    background: 'NavajoWhite',
-    foreground: 'black'
+    background: 'green',
+    foreground: 'white'
   },
   epic: {
-    background: 'NavajoWhite',
-    foreground: 'black'
+    background: 'blue',
+    foreground: 'yellow'
   },
   legendary: {
-    background: 'NavajoWhite',
+    background: 'orange',
     foreground: 'black'
   }
 }

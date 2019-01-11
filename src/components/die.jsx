@@ -65,9 +65,9 @@ const dieTypes = {
       6: swordWhite
     }
   },
-  artifactMightyd8: {
-    background: 'silver',
-    foreground: 'black',
+  mighty: {
+    background: 'green',
+    foreground: 'white',
     special: {  
       6: d8_1,
       7: d8_1,
@@ -75,12 +75,12 @@ const dieTypes = {
     }
 
   },
-  artifactEpicd10: {
-    background: 'silver',
-    foreground: 'black'
+  epic: {
+    background: 'blue',
+    foreground: 'yellow'
   },
-  artifactLegendaryd12: {
-    background: 'silver',
+  legendary: {
+    background: 'orange',
     foreground: 'black'
   }
 }

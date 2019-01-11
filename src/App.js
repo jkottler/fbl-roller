@@ -13,36 +13,51 @@ import DiceDisplay from './components/diceDisplay'
 // init materialize
 M.AutoInit()
 
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.collapsible');
-  var instances = M.Collapsible.init(elems, {});
-});
-
 // create a Mersenne Twister-19937 that is auto-seeded based on time and other random values
-var engine = Random.engines.mt19937().autoSeed()
-var distribution = Random.integer(1, 6)
-
-function roll () {
-  return distribution(engine)
+const engine = Random.engines.mt19937().autoSeed()
+const distributions = {
+  d6:Random.integer(1, 6),
+  d8:Random.integer(1,8),
+  d10:Random.integer(1,10),
+  d12: Random.integer(1,12)
 }
 
-function rollDice (baseCount, skillCount, gearCount) {
+function roll (distribution) {
+  return distributions[distribution](engine)
+}
+
+function rollDice (baseCount, skillCount, gearCount, mightyCount, epicCount, legendaryCount) {
   let result = []
 
   let index = 0
 
   for (let i = 0; i < baseCount; i++) {
-    result.push(<Die value={roll()} type='base' key={index} />)
+    result.push(<Die value={roll('d6')} type='base' key={index} />)
     index++
   }
 
   for (let i = 0; i < skillCount; i++) {
-    result.push(<Die value={roll()} type='skill' key={index} />)
+    result.push(<Die value={roll('d6')} type='skill' key={index} />)
     index++
   }
 
   for (let i = 0; i < gearCount; i++) {
-    result.push(<Die value={roll()} type='gear' key={index} />)
+    result.push(<Die value={roll('d6')} type='gear' key={index} />)
+    index++
+  }
+
+  for (let i = 0; i < mightyCount; i++) {
+    result.push(<Die value={roll('d8')} type='mighty' key={index} />)
+    index++
+  }
+ 
+  for (let i = 0; i < epicCount; i++) {
+    result.push(<Die value={roll('d10')} type='epic' key={index} />)
+    index++
+  }
+
+  for (let i = 0; i < legendaryCount; i++) {
+    result.push(<Die value={roll('d12')} type='legendary' key={index} />)
     index++
   }
   return result
@@ -56,28 +71,37 @@ class App extends Component {
       baseCount: 0,
       skillCount: 0,
       gearCount: 0,
+      mightyCount: 0,
+      epicCount: 0,
+      legendaryCount: 0,
       dice: rollDice(0, 0, 0),
       pushDisabled: 'disabled',
       rollDisabled: 'disabled',
       prideDisabled: 'disabled'
     }
 
-    this.handleRoll = (e) => {
-      let { baseCount, skillCount, gearCount } = e
+    this.handleRoll = e => {
+      let { baseCount, skillCount, gearCount, mightyCount, epicCount, legendaryCount } = e
       baseCount = parseInt(baseCount, 10)
       skillCount = parseInt(skillCount, 10)
       gearCount = parseInt(gearCount, 10)
+      mightyCount = parseInt(mightyCount, 10)
+      epicCount = parseInt(epicCount, 10)
+      legendaryCount = parseInt(legendaryCount, 10)
       this.setState({
         baseCount,
         skillCount,
         gearCount,
-        dice: rollDice(baseCount, skillCount, gearCount),
+        mightyCount,
+        epicCount,
+        legendaryCount,
+        dice: rollDice(baseCount, skillCount, gearCount, mightyCount, epicCount, legendaryCount),
         pushDisabled: '',
         prideDisabled: ''
       })
-    };
+    }
 
-    this.handlePush = (e) => {
+    this.handlePush = e => {
       let newDice = []
       for (let die of this.state.dice) {
         if (
@@ -93,9 +117,11 @@ class App extends Component {
           )
         }
       }
-      this.setState({ dice: newDice,
+      this.setState({
+        dice: newDice,
         pushDisabled: 'disabled',
-        prideDisabled: '' })
+        prideDisabled: ''
+      })
     }
   }
 
@@ -103,10 +129,13 @@ class App extends Component {
     return (
       <div className='App'>
         <header className='App-header'>
-          <img src={logo} className='App-logo hide-on-small-only' alt='logo' />
-          <div>
-            <h1 className='App-title'>Welcome to FBL Roller</h1>
-          </div>
+          <img
+            src={logo}
+            className='App-logo hide-on-small-only'
+            alt='logo'
+            style={{ marginBottom: '5px' }}
+          />
+          <h1 className='App-title'>Welcome to FBL Roller</h1>
         </header>
 
         <main>
@@ -117,6 +146,9 @@ class App extends Component {
                   baseCount={this.state.baseCount}
                   skillCount={this.state.skillCount}
                   gearCount={this.state.gearCount}
+                  mightyCount={this.state.mightyCount}
+                  epicCount={this.state.epicCount}
+                  legendaryCount={this.state.legendaryCount}
                   handleRoll={this.handleRoll}
                   handlePush={this.handlePush}
                   handlePride={this.handlePride}
@@ -141,7 +173,8 @@ class App extends Component {
                   <a
                     href='http://frialigan.se/en/games/forbidden-lands/'
                     rel='noopener noreferrer'
-                    target='_blank'>
+                    target='_blank'
+                  >
                     Forbidden Lands
                   </a>
                 </div>
@@ -150,7 +183,8 @@ class App extends Component {
                   <a
                     href='http://game-icons.net'
                     rel='noopener noreferrer'
-                    target='_blank'>
+                    target='_blank'
+                  >
                     game-icons.net
                   </a>
                 </div>
@@ -159,7 +193,8 @@ class App extends Component {
                   <a
                     href='https://github.com/jkottler/myz-roller'
                     rel='noopener noreferrer'
-                    target='_blank'>
+                    target='_blank'
+                  >
                     Github
                   </a>
                 </div>

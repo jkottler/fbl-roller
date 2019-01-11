@@ -14,7 +14,10 @@ class SelectorForm extends Component {
     this.state = {
       baseCount: this.props.baseCount || 0,
       skillCount: this.props.skillCount || 0,
-      gearCount: this.props.gearCount || 0
+      gearCount: this.props.gearCount || 0,
+      mightyCount: this.props.mightyCount ||0,
+      epicCount: this.props.epicCount || 0,
+      legendaryCount: this.props.legendaryCount || 0,
     }
 
     this.handleCountChange = (type, count) => {
@@ -23,15 +26,15 @@ class SelectorForm extends Component {
       })
     }
 
-    this.handleRoll = (e) => {
+    this.handleRoll = e => {
       this.props.handleRoll(this.state)
     }
 
-    this.handlePush = (e) => {
+    this.handlePush = e => {
       this.props.handlePush()
     }
 
-    this.handlePride = (e) => {
+    this.handlePride = e => {
       this.props.handlePride()
     }
   }
@@ -39,7 +42,10 @@ class SelectorForm extends Component {
   rollEnabled () {
     return this.state.baseCount === 0 &&
       this.state.skillCount === 0 &&
-      this.state.gearCount === 0
+      this.state.gearCount === 0 &&
+      this.state.mightyCount === 0 &&
+      this.state.epicCount === 0 &&
+      this.state.legendaryCount === 0
       ? 'disabled'
       : ''
   }
@@ -62,34 +68,28 @@ class SelectorForm extends Component {
           value={this.state.gearCount}
           onChange={this.handleCountChange}
         />
-        <ul className='collapsible'>
-          <li>
-            <div className='collapsible-header'>Artifacts</div>
-            <div className='collapsible-body'>
-              <NumberSelector
-                name='mighty'
-                value={this.state.gearCount}
-                onChange={this.handleCountChange}
-              />
-              <NumberSelector
-                name='epic'
-                value={this.state.gearCount}
-                onChange={this.handleCountChange}
-              />
-              <NumberSelector
-                name='legendary'
-                value={this.state.gearCount}
-                onChange={this.handleCountChange}
-              />
-            </div>
-            </li>
-          </ul>
-          
+
+        <NumberSelector
+          name='mighty'
+          value={this.state.mightyCount}
+          onChange={this.handleCountChange}
+        />
+        <NumberSelector
+          name='epic'
+          value={this.state.epicCount}
+          onChange={this.handleCountChange}
+        />
+        <NumberSelector
+          name='legendary'
+          value={this.state.legendaryCount}
+          onChange={this.handleCountChange}
+        />
         <span>
           <div
             style={style}
             className={'waves-effect waves-light btn ' + this.rollEnabled()}
-            onClick={this.handleRoll}>
+            onClick={this.handleRoll}
+          >
             roll
           </div>
           <div
@@ -97,7 +97,8 @@ class SelectorForm extends Component {
             className={
               'waves-effect waves-light btn ' + this.props.pushDisabled
             }
-            onClick={this.handlePush}>
+            onClick={this.handlePush}
+          >
             push
           </div>
           <div
@@ -105,7 +106,8 @@ class SelectorForm extends Component {
             className={
               'waves-effect waves-light btn ' + this.props.prideDisabled
             }
-            onClick={this.handlePride}>
+            onClick={this.handlePride}
+          >
             pride
           </div>
         </span>
