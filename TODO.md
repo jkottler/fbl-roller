@@ -1,3 +1,4 @@
 # TODO Thoughts
 
-* Move **Push** button out of the form to below the dice display
+* Push isn't working correctly yet - skulls reroll
+* Pride does nothing - remove the button until it does
