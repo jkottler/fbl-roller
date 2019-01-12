@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import IncrementButton from './incrementButton'
 
 const noselect = {
-  webkitTouchCallout: 'none', /* iOS Safari */
-  webkitUserSelect: 'none', /* Safari */
-  khtmlUserSelect: 'none', /* Konqueror HTML */
-  mozUserSelect: 'none', /* Firefox */
-  msUserSelect: 'none', /* Internet Explorer/Edge */
-  userSelect: 'none' /* Non-prefixed version, currently supported by Chrome and Opera */
-}	
+  webkitTouchCallout: 'none' /* iOS Safari */,
+  webkitUserSelect: 'none' /* Safari */,
+  khtmlUserSelect: 'none' /* Konqueror HTML */,
+  mozUserSelect: 'none' /* Firefox */,
+  msUserSelect: 'none' /* Internet Explorer/Edge */,
+  userSelect:
+    'none' /* Non-prefixed version, currently supported by Chrome and Opera */
+}
 
 const style = {
   ...noselect,
@@ -26,19 +27,13 @@ class NumberSelector extends Component {
 
     this.handleIncrement = e => {
       if (this.props.value < 8) {
-        this.props.onChange(
-          this.props.name,
-          parseInt(this.props.value, 10) + 1
-        )
+        this.props.onChange(this.props.name, parseInt(this.props.value, 10) + 1)
       }
     }
 
     this.handleDecrement = e => {
       if (this.props.value > 0) {
-        this.props.onChange(
-          this.props.name,
-          parseInt(this.props.value, 10) - 1
-        )
+        this.props.onChange(this.props.name, parseInt(this.props.value, 10) - 1)
       }
     }
   }
@@ -61,7 +56,8 @@ class NumberSelector extends Component {
             type={this.props.name}
             onClick={this.handleIncrement}
           />
-          <input style={{ margin: '5px 0px' }}
+          <input
+            style={{ margin: '5px 0px' }}
             placeholder={this.props.name}
             id={this.props.name}
             type='range'
