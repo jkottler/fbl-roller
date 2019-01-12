@@ -65,3 +65,8 @@ a {
     width: 40px !important;
   }
 }
+
+.die-type {
+  font-size: xx-small;
+  display: table;
+}

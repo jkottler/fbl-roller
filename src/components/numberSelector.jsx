@@ -18,7 +18,7 @@ const style = {
 }
 
 class NumberSelector extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.handleChange = e => {
@@ -38,10 +38,11 @@ class NumberSelector extends Component {
     }
   }
 
-  render () {
+  render() {
     return (
       <div className='row'>
         <div className='input-field'>
+          <span className='die-type' style={{}}>{this.props.name}</span>
           <IncrementButton
             label='-'
             type={this.props.name}
