@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/fbl-roller/static/media/2-swords-yellow.4eac100b.svg"
   },
   {
-    "revision": "355fc65c024739c71405",
-    "url": "/fbl-roller/static/css/main.e1e31d8b.chunk.css"
+    "revision": "207f2210745cc916db96",
+    "url": "/fbl-roller/static/css/main.c8112ad8.chunk.css"
   },
   {
     "revision": "cc4a1d3681620a8f6cd90a04811cdddc",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/fbl-roller/static/media/swords-yellow.255d915a.svg"
   },
   {
-    "revision": "355fc65c024739c71405",
-    "url": "/fbl-roller/static/js/main.355fc65c.chunk.js"
+    "revision": "207f2210745cc916db96",
+    "url": "/fbl-roller/static/js/main.207f2210.chunk.js"
   },
   {
     "revision": "2246e7279b79aee0f1ac3bcd969aaed5",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/fbl-roller/static/css/1.80976b06.chunk.css"
   },
   {
-    "revision": "28052f7c7750c6a365e8b919220f2d24",
+    "revision": "e4cb66af9d9c8f712073b20e622f3cc1",
     "url": "/fbl-roller/index.html"
   }
 ];
