@@ -1,7 +1,5 @@
 # Forbidden Lands Dice Roller
 
-## Not yet functional
-
 This app is descended from the Mutant: Year Zero app, which is live here: https://jkottler.github.io/myz-roller/
 
 This simple app is designed to allow you to play the _Forbidden Lands_ tabletop RPG without physical access to their customized dice.
