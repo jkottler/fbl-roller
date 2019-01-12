@@ -1,11 +1,17 @@
 import React from 'react'
 
 import swordWhite from './crossed-swords-white.svg'
+import swordsWhite2 from './2-swords-white.svg'
+import swordsYellow from './swords-yellow.svg'
+import swordsYellow2 from './2-swords-yellow.svg'
+import swordsYellow3 from './3-swords-yellow.svg'
 import swordBlack from './crossed-swords-black.svg'
+import swordsBlack2 from './2-swords-black.svg'
+import swordsBlack3 from './3-swords-black.svg'
+import swordsBlack4 from './4-swords-black.svg'
 import skullWhite from './dread-skull-white.svg'
 import skullBlack from './dread-skull-black.svg'
-import d8_1 from './d8-1.svg'
-import d8_2 from './d8-2.svg'
+
 
 
 function Die (props) {
@@ -69,21 +75,34 @@ const dieTypes = {
     background: 'green',
     foreground: 'white',
     special: {  
-      6: d8_1,
-      7: d8_1,
-      8: d8_2
+      6: swordWhite,
+      7: swordWhite,
+      8: swordsWhite2
     }
 
   },
   epic: {
     background: 'blue',
     foreground: 'yellow',
-    special: {} // TODO: get 2 and 3 sword graphics made, map to special values here
-  },
+    special: {
+      6: swordsYellow,
+      7: swordsYellow,
+      8: swordsYellow2,
+      9: swordsYellow2,
+      10: swordsYellow3
+  }},
   legendary: {
     background: 'orange',
     foreground: 'black',
-    special:{}
+    special:{
+      6: swordBlack,
+      7: swordBlack,
+      8: swordsBlack2,
+      9: swordsBlack2,
+      10: swordsBlack3,
+      11: swordsBlack3,
+      12: swordsBlack4
+    }
   }
 }
 
