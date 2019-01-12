@@ -102,7 +102,7 @@ class SelectorForm extends Component {
             push
           </div>
           <div
-            style={style}
+            style={{...style, display:'none'}}
             className={
               'waves-effect waves-light btn ' + this.props.prideDisabled
             }

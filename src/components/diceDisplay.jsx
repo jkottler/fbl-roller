@@ -1,7 +1,6 @@
 import React from 'react'
 
 function DiceDisplay (props) {
-  console.log(props.dice.map(v=>[v.props.type, v.props.value]))
   return (
     <div>
       <div>{props.dice.filter(die => die.props.type === 'base')}</div>

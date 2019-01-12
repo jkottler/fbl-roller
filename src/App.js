@@ -112,7 +112,7 @@ class App extends Component {
       for (let die of this.state.dice) {
         if (
           die.props.value >= 6 ||
-          (die.props.value === 1 && die.props.type in ['base', 'gear'])
+          (die.props.value === 1 && ['base', 'gear'].indexOf(die.props.type) !== -1)
         ) {
           // keep symbol dice
           newDice.push(die)
