@@ -22,7 +22,17 @@ function IncrementButton (props) {
   )
 }
 
+const noselect = {
+  webkitTouchCallout: 'none', /* iOS Safari */
+  webkitUserSelect: 'none', /* Safari */
+  khtmlUserSelect: 'none', /* Konqueror HTML */
+  mozUserSelect: 'none', /* Firefox */
+  msUserSelect: 'none', /* Internet Explorer/Edge */
+  userSelect: 'none' /* Non-prefixed version, currently supported by Chrome and Opera */
+}	
+
 const style = {
+  ...noselect,
   width: '50px',
   height: '50px',
   margin: '3px',

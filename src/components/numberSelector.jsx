@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 import IncrementButton from './incrementButton'
 
+const noselect = {
+  webkitTouchCallout: 'none', /* iOS Safari */
+  webkitUserSelect: 'none', /* Safari */
+  khtmlUserSelect: 'none', /* Konqueror HTML */
+  mozUserSelect: 'none', /* Firefox */
+  msUserSelect: 'none', /* Internet Explorer/Edge */
+  userSelect: 'none' /* Non-prefixed version, currently supported by Chrome and Opera */
+}	
+
 const style = {
+  ...noselect,
   fontSize: 'xx-large',
   verticalAlign: 'top'
 }
