@@ -47,7 +47,7 @@ const style = {
   display: 'inline-block'
 }
 
-const dieTypes = {
+export const dieTypes = {
   base: {
     background: 'beige',
     foreground: 'black',

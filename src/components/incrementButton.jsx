@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { dieTypes as types } from './die'
+
 function IncrementButton (props) {
   return (
     <div className='increment-button'
@@ -29,7 +31,7 @@ const noselect = {
   mozUserSelect: 'none', /* Firefox */
   msUserSelect: 'none', /* Internet Explorer/Edge */
   userSelect: 'none' /* Non-prefixed version, currently supported by Chrome and Opera */
-}	
+}
 
 const style = {
   ...noselect,
@@ -41,33 +43,6 @@ const style = {
   display: 'inline-block',
   fontFamily: "'Arial Black', Arial-BoldMT, roboto, 'sans-serif'",
   fontSize: '3rem'
-}
-
-const types = {
-  base: {
-    background: 'beige',
-    foreground: 'black'
-  },
-  skill: {
-    background: 'maroon',
-    foreground: 'white'
-  },
-  gear: {
-    background: 'black',
-    foreground: 'white'
-  },
-  mighty: {
-    background: 'green',
-    foreground: 'white'
-  },
-  epic: {
-    background: 'blue',
-    foreground: 'yellow'
-  },
-  legendary: {
-    background: 'orange',
-    foreground: 'black'
-  }
 }
 
 export default IncrementButton
