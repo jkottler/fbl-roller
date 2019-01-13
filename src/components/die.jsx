@@ -14,7 +14,7 @@ import skullBlack from './dread-skull-black.svg'
 
 
 
-function Die (props) {
+function Die(props) {
   return (
     <div
       style={{
@@ -51,9 +51,9 @@ const dieTypes = {
   base: {
     background: 'beige',
     foreground: 'black',
-    special : {
-      1:skullBlack,
-      6:swordBlack
+    special: {
+      1: skullBlack,
+      6: swordBlack
     }
   },
   skill: {
@@ -74,7 +74,7 @@ const dieTypes = {
   mighty: {
     background: 'green',
     foreground: 'white',
-    special: {  
+    special: {
       6: swordWhite,
       7: swordWhite,
       8: swordsWhite2
@@ -90,11 +90,12 @@ const dieTypes = {
       8: swordsYellow2,
       9: swordsYellow2,
       10: swordsYellow3
-  }},
+    }
+  },
   legendary: {
     background: 'orange',
     foreground: 'black',
-    special:{
+    special: {
       6: swordBlack,
       7: swordBlack,
       8: swordsBlack2,
@@ -108,7 +109,7 @@ const dieTypes = {
 
 const show = (type, value) => {
   let v = parseInt(value, 10)
-  if(dieTypes[type].special.hasOwnProperty(v)) {
+  if (dieTypes[type].special.hasOwnProperty(v)) {
     return (
       <img
         height='40'
