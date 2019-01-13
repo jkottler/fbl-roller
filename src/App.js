@@ -197,7 +197,7 @@ class App extends Component {
                 <div className='col s4'>
                   Contribute on:{' '}
                   <a
-                    href='https://github.com/jkottler/myz-roller'
+                    href='https://github.com/jkottler/fbl-roller'
                     rel='noopener noreferrer'
                     target='_blank'
                   >
