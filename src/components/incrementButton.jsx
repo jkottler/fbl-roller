@@ -45,7 +45,7 @@ const style = {
 
 const types = {
   base: {
-    background: 'silver',
+    background: 'beige',
     foreground: 'black'
   },
   skill: {

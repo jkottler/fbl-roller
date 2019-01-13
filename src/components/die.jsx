@@ -49,7 +49,7 @@ const style = {
 
 const dieTypes = {
   base: {
-    background: 'silver',
+    background: 'beige',
     foreground: 'black',
     special : {
       1:skullBlack,
