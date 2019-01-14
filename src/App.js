@@ -105,6 +105,10 @@ class App extends Component {
         pushDisabled: '',
         prideDisabled: ''
       })
+      ReactGA.event({
+        category: 'Dice',
+        action: 'roll'
+      })
     }
 
     this.handlePush = e => {
@@ -127,6 +131,10 @@ class App extends Component {
         dice: newDice,
         pushDisabled: '',
         prideDisabled: ''
+      })
+      ReactGA.event({
+        category: 'Dice',
+        action: 'push'
       })
     }
   }
