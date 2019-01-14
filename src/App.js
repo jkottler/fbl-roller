@@ -3,6 +3,7 @@ import M from 'materialize-css'
 import React, { Component } from 'react'
 import logo from './components/crossed-swords-white.svg'
 import Random from 'random-js'
+import ReactGA from 'react-ga'
 
 import './App.css'
 
