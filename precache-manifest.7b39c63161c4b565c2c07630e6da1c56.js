@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/fbl-roller/static/media/2-swords-yellow.4eac100b.svg"
   },
   {
-    "revision": "5b4eea1f1adc6648c1d0",
+    "revision": "6ec73fe2845777454951",
     "url": "/fbl-roller/static/css/main.2528e396.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/fbl-roller/static/media/dread-skull-black.cc4a1d36.svg"
   },
   {
-    "revision": "e73137e712c7802fe890",
-    "url": "/fbl-roller/static/js/1.e73137e7.chunk.js"
+    "revision": "d3edc3fbb580eb02a7fd",
+    "url": "/fbl-roller/static/js/1.d3edc3fb.chunk.js"
   },
   {
     "revision": "4e4d6a122e6616908ec1",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/fbl-roller/static/media/swords-yellow.255d915a.svg"
   },
   {
-    "revision": "5b4eea1f1adc6648c1d0",
-    "url": "/fbl-roller/static/js/main.5b4eea1f.chunk.js"
+    "revision": "6ec73fe2845777454951",
+    "url": "/fbl-roller/static/js/main.6ec73fe2.chunk.js"
   },
   {
     "revision": "2246e7279b79aee0f1ac3bcd969aaed5",
@@ -60,11 +60,11 @@ self.__precacheManifest = [
     "url": "/fbl-roller/static/media/dread-skull-white.841885b2.svg"
   },
   {
-    "revision": "e73137e712c7802fe890",
+    "revision": "d3edc3fbb580eb02a7fd",
     "url": "/fbl-roller/static/css/1.5c451e91.chunk.css"
   },
   {
-    "revision": "0aef8a2e3a905650163a6df530a2185f",
+    "revision": "ddd74235eb0ef8a28d8fade8a1750d3e",
     "url": "/fbl-roller/index.html"
   }
 ];
