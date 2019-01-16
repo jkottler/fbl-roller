@@ -11,6 +11,9 @@ import Die from './components/die'
 import SelectorForm from './components/selectorForm'
 import DiceDisplay from './components/diceDisplay'
 
+// init Google Analytics
+ReactGA.initialize('UA-104501320-3');
+
 // init materialize
 M.AutoInit()
 
